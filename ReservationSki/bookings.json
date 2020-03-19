@@ -1,0 +1,182 @@
+[
+  {
+    "booking_id": "1",
+    "person_booking": [
+      {
+        "person": {
+          "person_id" : "1",
+          "first_name" : "Jack",
+          "last_name" : "Reacher",
+          "gender" : "MALE",
+          "weight" : 70,
+          "height" : 175,
+          "level" : "DEBUTANT",
+          "birth_date" : "05/11/1970"
+        },
+        "equipment": {
+          "equipment_name" : "Luge motorisé"
+        },
+        "start_date": "10/01/2020",
+        "end_date": "24/01/2020"
+      },
+      {
+        "person": {
+          "person_id" : "1",
+          "first_name" : "Jack",
+          "last_name" : "Reacher",
+          "gender" : "MALE",
+          "weight" : 70,
+          "height" : 175,
+          "level" : "DEBUTANT",
+          "birth_date" : "05/11/1970"
+        },
+        "equipment": {
+          "equipment_name" : "Chaussures Snowboard"
+        },
+        "start_date": "04/01/2020",
+        "end_date": "20/01/2020"
+      },
+      {
+        "person": {
+          "person_id" : "2",
+          "first_name" : "Lisa",
+          "last_name" : "Prisme",
+          "gender" : "FEMALE",
+          "weight" : 62,
+          "height" : 170,
+          "level" : "CONFIRME",
+          "birth_date" : "06/08/1980"
+        },
+        "equipment": {
+          "equipment_name" : "Luge motorisé"
+        },
+        "start_date": "15/12/2019",
+        "end_date": "25/12/2019"
+      },
+      {
+        "person": {
+          "person_id" : "1",
+          "first_name" : "Jack",
+          "last_name" : "Reacher",
+          "gender" : "MALE",
+          "weight" : 70,
+          "height" : 175,
+          "level" : "DEBUTANT",
+          "birth_date" : "05/11/1970"
+        },
+        "equipment": {
+          "equipment_name" : "Casque"
+        },
+        "start_date": "06/01/2020",
+        "end_date": "15/01/2020"
+      },
+      {
+        "person": {
+          "person_id" : "3",
+          "first_name" : "Louis",
+          "last_name" : "Montreux",
+          "gender" : "MALE",
+          "weight" : 78,
+          "height" : 180,
+          "level" : "EXPERT",
+          "birth_date" : "18/04/1998"
+        },
+        "equipment": {
+          "equipment_name" : "Batons de ski"
+        },
+        "start_date": "14/01/2020",
+        "end_date": "18/01/2020"
+      }
+    ]
+  },
+  {
+    "booking_id": "2",
+    "person_booking": [
+      {
+        "person": {
+          "person_id" : "4",
+          "first_name" : "Matthieu",
+          "last_name" : "Le Grand",
+          "gender" : "MALE",
+          "weight" : 75,
+          "height" : 181,
+          "level" : "DEBUTANT",
+          "birth_date" : "01/02/2001"
+        },
+        "equipment": {
+          "equipment_name" : "Chaussures Ski"
+        },
+        "start_date": "10/02/2020",
+        "end_date": "20/02/2020"
+      },
+      {
+        "person": {
+          "person_id" : "5",
+          "first_name" : "Jade",
+          "last_name" : "Martin",
+          "gender" : "FEMALE",
+          "weight" : 62,
+          "height" : 168,
+          "level" : "DEBUTANT",
+          "birth_date" : "23/06/1995"
+        },
+        "equipment": {
+          "equipment_name" : "Chaussures Snowboard"
+        },
+        "start_date": "12/02/2020",
+        "end_date": "20/02/2020"
+      },
+      {
+        "person": {
+          "person_id" : "5",
+          "first_name" : "Jade",
+          "last_name" : "Martin",
+          "gender" : "FEMALE",
+          "weight" : 62,
+          "height" : 168,
+          "level" : "DEBUTANT",
+          "birth_date" : "23/06/1995"
+        },
+        "equipment": {
+          "equipment_name" : "Luge"
+        },
+        "start_date": "14/02/2020",
+        "end_date": "18/02/2020"
+      },
+      {
+        "person": {
+          "person_id" : "6",
+          "first_name" : "Anne",
+          "last_name" : "Pouget",
+          "gender" : "FEMALE",
+          "weight" : 61,
+          "height" : 169,
+          "level" : "EXPERT",
+          "birth_date" : "28/09/1997"
+        },
+        "equipment": {
+          "equipment_name" : "Casque"
+        },
+        "start_date": "16/02/2020",
+        "end_date": "21/02/2020"
+      },
+      {
+        "person": {
+          "person_id" : "6",
+          "first_name" : "Anne",
+          "last_name" : "Pouget",
+          "gender" : "FEMALE",
+          "weight" : 61,
+          "height" : 169,
+          "level" : "EXPERT",
+          "birth_date" : "28/9/1997"
+        },
+        "equipment": {
+          "equipment_name" : "Chaussures Monoski"
+        },
+        "start_date": "10/02/2020",
+        "end_date": "16/02/2020"
+      }
+    ]
+  }
+]

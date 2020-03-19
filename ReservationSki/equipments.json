@@ -1,0 +1,26 @@
+[
+  {
+    "equipment_id" : "1",
+    "equipment_name" : "Luge motorisé"
+  },
+  {
+    "equipment_id" : "2",
+    "equipment_name" : "Casque de Vitesse"
+  },
+  {
+    "equipment_id" : "3",
+    "equipment_name" : "Gants Double épaisseurs"
+  },
+  {
+    "equipment_id" : "4",
+    "equipment_name" : "Protèges Genoux en Carbone"
+  },
+  {
+    "equipment_id" : "5",
+    "equipment_name" : "Masque Anti-UV"
+  },
+  {
+    "equipment_id" : "6",
+    "equipment_name" : "Protection Dorsale Raven"
+  }
+]
