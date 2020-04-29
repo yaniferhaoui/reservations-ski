@@ -38,29 +38,29 @@ public final class DatabaseTest {
 	private final Equipment equipment3 = new Equipment(EquipmentEnum.LUGE.toString());
 
 	private final Person person1 = new Person("Jules", "Petit", Gender.MALE, 78, 181, Level.CONFIRME, //
-			System.currentTimeMillis() - TimeHelper.msPerDay * 365 * 19 + TimeHelper.msPerDay * 42);
+			System.currentTimeMillis() - TimeHelper.MS_PER_DAY * 365 * 19 + TimeHelper.MS_PER_DAY * 42);
 	
 	private final Person person2 = new Person("Antoine", "Grand", Gender.MALE, 67, 175, Level.DEBUTANT, //
-			System.currentTimeMillis() - TimeHelper.msPerDay * 365 * 9 + TimeHelper.msPerDay * 188);
+			System.currentTimeMillis() - TimeHelper.MS_PER_DAY * 365 * 9 + TimeHelper.MS_PER_DAY * 188);
 	
 	private final Person person3 = new Person("Lisa", "Mayet", Gender.FEMALE, 67, 168, Level.EXPERT, //
-			System.currentTimeMillis() - TimeHelper.msPerDay * 365 * 15 + TimeHelper.msPerDay * 12);
+			System.currentTimeMillis() - TimeHelper.MS_PER_DAY * 365 * 15 + TimeHelper.MS_PER_DAY * 12);
 
 	// Booking 1
 	private final PersonBooking personBooking1A = new PersonBooking(this.person1, //
 			this.equipment1, //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay), //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay) + TimeHelper.msPerDay);
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY), //
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY) + TimeHelper.MS_PER_DAY);
 
 	private final PersonBooking personBooking2A = new PersonBooking(this.person2, //
 			this.equipment3, //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay), //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay) + TimeHelper.msPerDay);
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY), //
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY) + TimeHelper.MS_PER_DAY);
 
 	private final PersonBooking personBooking3A = new PersonBooking(this.person3, //
 			this.equipment2, //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay), //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay) + TimeHelper.msPerDay);
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY), //
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY) + TimeHelper.MS_PER_DAY);
 
 	private final TreeSet<PersonBooking> personBookings1 = new TreeSet<PersonBooking>(//
 			Arrays.asList(new PersonBooking[] { //
@@ -72,13 +72,13 @@ public final class DatabaseTest {
 	// Booking 2
 	private final PersonBooking personBooking1B = new PersonBooking(this.person1, //
 			this.equipment3, //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay), //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay) + TimeHelper.msPerDay);
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY), //
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY) + TimeHelper.MS_PER_DAY);
 
 	private final PersonBooking personBooking2B = new PersonBooking(this.person2, //
 			this.equipment2, //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay), //
-			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.msPerDay) + TimeHelper.msPerDay);
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY), //
+			System.currentTimeMillis() + MathHelper.nextLong(TimeHelper.MS_PER_DAY) + TimeHelper.MS_PER_DAY);
 
 	private final TreeSet<PersonBooking> personBookings2 = new TreeSet<PersonBooking>(//
 			Arrays.asList(new PersonBooking[] { //

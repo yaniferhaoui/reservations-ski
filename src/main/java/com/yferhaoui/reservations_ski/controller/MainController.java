@@ -477,7 +477,7 @@ public final class MainController {
 		modifyButton.setOnAction(event -> {
 
 			try {
-				
+
 				// Open new AddModifyPersonBookingWindow with the fields filled
 				final AddModifyPersonBookingWindow stage = new AddModifyPersonBookingWindow(this.database, //
 						this.personList, //
@@ -520,7 +520,7 @@ public final class MainController {
 				if (result.get() == ButtonType.OK) {
 
 					this.database.deletePersonBooking(personBooking, booking.getBookingID());
-					
+
 					this.updateBookingPagination();
 				}
 
@@ -540,7 +540,7 @@ public final class MainController {
 			final Date startDate, //
 			final Date endDate) throws SQLException, IOException {
 
-		final Date dateRef = new Date(System.currentTimeMillis() - (TimeHelper.msPerDay * 365L * 10L));
+		final Date dateRef = new Date(System.currentTimeMillis() - (TimeHelper.MS_PER_DAY * 365L * 10L));
 		final String equipmentName = equipment.getName().toUpperCase();
 
 		if (!equipmentName.contains(Equipment.EquipmentEnum.CASQUE.toString().toUpperCase())
@@ -720,51 +720,55 @@ public final class MainController {
 					.showOpenDialog(((Stage) ((Node) e.getSource()).getScene().getWindow()));
 
 			if (selectedFile != null) {
-				final Gson gson = new GsonBuilder().setDateFormat("dd/MM/yyyy").create();
-				final TreeSet<Person> out = new TreeSet<Person>();
-				out.addAll(Arrays.asList(gson.fromJson(new JsonReader(new FileReader(selectedFile)), Person[].class)));
 
-				for (final Person person : out) {
+				try (final JsonReader jr = new JsonReader(new FileReader(selectedFile))) {
 
-					try {
+					final Gson gson = new GsonBuilder().setDateFormat("dd/MM/yyyy").create();
+					final TreeSet<Person> out = new TreeSet<Person>();
+					out.addAll(Arrays.asList(gson.fromJson(jr, Person[].class)));
 
-						if (StringUtils.isBlank(person.getFirstName())) {
-							throw new Exception("First Name cannot be empty !");
+					for (final Person person : out) {
+
+						try {
+
+							if (StringUtils.isBlank(person.getFirstName())) {
+								throw new Exception("First Name cannot be empty !");
+							}
+
+							if (StringUtils.isBlank(person.getLastName())) {
+								throw new Exception("Last Name cannot be null !");
+							}
+
+							if (person.getGender() == null) {
+								throw new Exception("Gender cannot bu null !");
+							}
+
+							if (person.getWeight() == 0) {
+								throw new Exception("Weight cannot be null !");
+							}
+
+							if (person.getHeight() == 0) {
+								throw new Exception("Height cannot be null !");
+							}
+
+							if (person.getLevel() == null) {
+								throw new Exception("Level cannot be null !");
+							}
+
+							if (person.getBirthDate() == null) {
+								throw new Exception("Birth Date cannot be empty !");
+							}
+
+							if (person.getBirthDate().after(new Date())) {
+								throw new Exception("Birth Date must be before current date !");
+							}
+
+							this.database.insertOrUpdatePerson(person);
+
+						} catch (final Exception ex) {
+							Popup.alert(ex);
+							ex.printStackTrace();
 						}
-
-						if (StringUtils.isBlank(person.getLastName())) {
-							throw new Exception("Last Name cannot be null !");
-						}
-
-						if (person.getGender() == null) {
-							throw new Exception("Gender cannot bu null !");
-						}
-
-						if (person.getWeight() == 0) {
-							throw new Exception("Weight cannot be null !");
-						}
-
-						if (person.getHeight() == 0) {
-							throw new Exception("Height cannot be null !");
-						}
-
-						if (person.getLevel() == null) {
-							throw new Exception("Level cannot be null !");
-						}
-
-						if (person.getBirthDate() == null) {
-							throw new Exception("Birth Date cannot be empty !");
-						}
-
-						if (person.getBirthDate().after(new Date())) {
-							throw new Exception("Birth Date must be before current date !");
-						}
-
-						this.database.insertOrUpdatePerson(person);
-
-					} catch (final Exception ex) {
-						Popup.alert(ex);
-						ex.printStackTrace();
 					}
 				}
 				this.updatePersonPagination();
@@ -784,27 +788,30 @@ public final class MainController {
 					.showOpenDialog(((Stage) ((Node) e.getSource()).getScene().getWindow()));
 
 			if (selectedFile != null) {
-				final Gson gson = new Gson();
-				final TreeSet<Equipment> out = new TreeSet<Equipment>();
-				out.addAll(
-						Arrays.asList(gson.fromJson(new JsonReader(new FileReader(selectedFile)), Equipment[].class)));
 
-				for (final Equipment equipment : out) {
+				try (final JsonReader jr = new JsonReader(new FileReader(selectedFile))) {
 
-					try {
+					final Gson gson = new Gson();
+					final TreeSet<Equipment> out = new TreeSet<Equipment>();
+					out.addAll(Arrays.asList(gson.fromJson(jr, Equipment[].class)));
 
-						if (StringUtils.isBlank(equipment.getName())) {
-							throw new Exception("Equipment Name cannot be empty !");
+					for (final Equipment equipment : out) {
+
+						try {
+
+							if (StringUtils.isBlank(equipment.getName())) {
+								throw new Exception("Equipment Name cannot be empty !");
+							}
+
+							this.database.insertOrUpdateEquipment(equipment);
+
+						} catch (final Exception ex) {
+							Popup.alert(ex);
+							ex.printStackTrace();
 						}
-
-						this.database.insertOrUpdateEquipment(equipment);
-
-					} catch (final Exception ex) {
-						Popup.alert(ex);
-						ex.printStackTrace();
 					}
+					this.updateEquipmentPagination();
 				}
-				this.updateEquipmentPagination();
 			}
 		} catch (final Exception ex) {
 			Popup.alert(ex);
